@@ -10,7 +10,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -18,12 +18,12 @@ jobs:
       - uses: subosito/flutter-action@v2.3.0
         with:
           flutter-version: '2.10.4'
-      - name: "build web"
-        run: 
+      - name: Build Web
+        run: |
           flutter pub get
           flutter build web
-      - name: "deploy web"
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: "./build/web"
+          publish_dir: ./build/web
