@@ -118,11 +118,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           timeIndex == 6
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              ? Flex(
+                  direction: Axis.horizontal,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: 160,
+                    Expanded(
+                      flex: 4,
                       child: GFButton(
                         text: '再起一卦',
                         size: GFSize.LARGE,
@@ -134,11 +135,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                       ),
                     ),
-                    const SizedBox(
-                      width: 24,
+                    const Spacer(
+                      flex: 1,
                     ),
-                    SizedBox(
-                      width: 160,
+                    Expanded(
+                      flex: 4,
                       child: GFButton(
                         text: '解卦',
                         size: GFSize.LARGE,
@@ -173,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Center(
                 child: Text(
                   '请集中精力，默想所占之事',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
             ),
