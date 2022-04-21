@@ -21,7 +21,7 @@ jobs:
       - name: Build Web
         run: |
           flutter pub get
-          flutter build web
+          flutter build web --base-href=/divination-app/
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
